@@ -1,16 +1,13 @@
+import Part from "./Part"
+
+
 const Content = (props)=>{
-   return(
-      <>
-         <p>
-        {props.content.part1} {props.content.exercises1}
-      </p>
-      <p>
-        {props.content.part2} {props.content.exercises2}
-      </p>
-      <p>
-        {props.content.part3} {props.content.exercises3}
-      </p>
-      </>
+  return(
+    <>
+      <Part name={props.content.part1} num={props.content.exercises1}/>
+      <Part name={props.content.part2} num={props.content.exercises2}/>
+      <Part name={props.content.part3} num={props.content.exercises3}/>
+    </>
    )
 }
 export default Content
