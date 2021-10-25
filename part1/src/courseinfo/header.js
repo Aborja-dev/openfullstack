@@ -1,5 +1,4 @@
-const Header = ()=>{
-   const course = 'Half Stack application development'
+const Header = ({course})=>{
    return(
       <>
          <h2>{course}</h2>
