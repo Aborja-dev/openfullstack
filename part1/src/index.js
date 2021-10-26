@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import Header from './courseinfo/header'
 import Content from './courseinfo/content'
 import Total from './courseinfo/total'
+import Unicafe from './unicafe/Unicafe'
 
 const App = () => {
   const data = {
@@ -30,6 +31,8 @@ const App = () => {
       <Header course={data.course}/>
       <Content content={data.parts}/>
       <Total values={[data.parts[0].exercises, data.parts[1].exercises, data.parts[2].exercises]}/>
+      <h1>Unicafe</h1>
+      <Unicafe/>
     </div>
   )
 }
