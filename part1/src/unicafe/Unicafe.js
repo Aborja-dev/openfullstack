@@ -7,6 +7,8 @@ const Unicafe = () => {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
+  //VARIABLES
+  const total = good+neutral+bad
   //METODOS
   const setRating = (type,value) => {
     const rates = {
@@ -38,6 +40,14 @@ const Unicafe = () => {
       <p>
         Malo <span>{bad}</span>
       </p>
+      <p>
+        Total <span>{total}</span>
+      </p>
+      <p>
+        Promedio <span>{(total)/3}</span>
+      </p>
+      <p>Porcentaje de reseñas positivas</p>
+      <p>{good<1 ? 'Aun no hay reseñas positivas' : (good*100)/total}%</p>
     </div>
   );
 }
