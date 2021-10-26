@@ -31,7 +31,10 @@ const Unicafe = () => {
       <span>
         <button onClick={ ()=>{setRating('bad',bad)}}>Malo</button>
       </span>
-      <Statistic stats={{good: good, neutral: neutral, bad: bad}}></Statistic>
+      {good + neutral + bad > 0
+       ?<Statistic stats={{good: good, neutral: neutral, bad: bad}}/>
+       :<p>Aun no hay calificaciones</p>
+      }
     </div>
   );
 }
