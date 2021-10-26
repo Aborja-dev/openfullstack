@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
+import Statistic from './Statistics';
 
 const Unicafe = () => {
   // save clicks of each button to its own state
@@ -8,7 +9,7 @@ const Unicafe = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
   //VARIABLES
-  const total = good+neutral+bad
+
   //METODOS
   const setRating = (type,value) => {
     const rates = {
@@ -30,24 +31,7 @@ const Unicafe = () => {
       <span>
         <button onClick={ ()=>{setRating('bad',bad)}}>Malo</button>
       </span>
-      <h2>Estadisticas</h2>
-      <p>
-        Bueno <span>{good}</span>
-      </p>
-      <p>
-        Medio <span>{neutral}</span>
-      </p>
-      <p>
-        Malo <span>{bad}</span>
-      </p>
-      <p>
-        Total <span>{total}</span>
-      </p>
-      <p>
-        Promedio <span>{(total)/3}</span>
-      </p>
-      <p>Porcentaje de reseñas positivas</p>
-      <p>{good<1 ? 'Aun no hay reseñas positivas' : (good*100)/total}%</p>
+      <Statistic stats={{good: good, neutral: neutral, bad: bad}}></Statistic>
     </div>
   );
 }
