@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import ReactDOM from 'react-dom'
-import Statistic from './Statistics';
+import { Button } from './components/Button';
+import Statistics from './Statistics';
 
 const Unicafe = () => {
   // save clicks of each button to its own state
@@ -23,16 +23,16 @@ const Unicafe = () => {
     <div>
       <h2>Dar feedback</h2>
       <span>
-        <button onClick={ ()=>{setRating('good', good)}}>Bueno</button>
+        <Button state={[good, setGood]} label={'Bueno'}></Button>
       </span>
       <span>
-        <button onClick={ ()=>{setRating('neutral',neutral)}}>Medio</button>
+      <Button state={[neutral, setNeutral]} label={'Regular'}></Button>
       </span>
       <span>
-        <button onClick={ ()=>{setRating('bad',bad)}}>Malo</button>
+      <Button state={[bad, setBad]} label={'Malo'}></Button>
       </span>
       {good + neutral + bad > 0
-       ?<Statistic stats={{good: good, neutral: neutral, bad: bad}}/>
+       ?<Statistics stats={{good: good, neutral: neutral, bad: bad}}/>
        :<p>Aun no hay calificaciones</p>
       }
     </div>

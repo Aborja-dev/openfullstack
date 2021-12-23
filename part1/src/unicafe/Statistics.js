@@ -1,21 +1,33 @@
-const Statistic = ({stats})=>{
+import { Statistic } from "./components/Statistic"
+
+const Statistics = ({stats})=>{
    const {good, neutral, bad} = stats
    const total = good+neutral+bad
+
+   const data = [
+     {
+       label: 'Bueno',
+       stat: good,
+      },
+      {
+        label: 'Neutral',
+        stat: neutral,
+       },
+       {
+        label: 'Malo',
+        stat: bad,
+       },
+       {
+        label: 'Total',
+        stat: total,
+       },
+   ]
    return(
       <div>
          <h2>Estadisticas</h2>
-      <p>
-        Bueno <span>{good}</span>
-      </p>
-      <p>
-        Medio <span>{neutral}</span>
-      </p>
-      <p>
-        Malo <span>{bad}</span>
-      </p>
-      <p>
-        Total <span>{total}</span>
-      </p>
+         { data.map( item=>
+            <Statistic label={item.label} value={item.stat}></Statistic>)
+          }
       <p>
         Promedio <span>{(total)/3}</span>
       </p>
@@ -25,4 +37,4 @@ const Statistic = ({stats})=>{
    )
 }
 
-export default Statistic
+export default Statistics
