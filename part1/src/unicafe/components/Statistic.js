@@ -1,5 +1,6 @@
 export const Statistic = ({label,value})=>(
-    <p>
-        {label} <span>{value}</span>
-    </p>
+    <tr>
+        <td>{label}</td>
+        <td>{value}</td>
+    </tr>
 )

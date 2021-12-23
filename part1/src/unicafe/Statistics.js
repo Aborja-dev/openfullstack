@@ -25,9 +25,13 @@ const Statistics = ({stats})=>{
    return(
       <div>
          <h2>Estadisticas</h2>
-         { data.map( item=>
+         <table>
+           <tbody>
+           { data.map( item=>
             <Statistic label={item.label} value={item.stat}></Statistic>)
           }
+           </tbody>    
+         </table>
       <p>
         Promedio <span>{(total)/3}</span>
       </p>
